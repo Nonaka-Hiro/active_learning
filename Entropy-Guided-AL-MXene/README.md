@@ -54,12 +54,12 @@ Pretrained DeePMD-kit models are provided in the `models/` directory.
 | System | File | Description |
 |--------|------|-------------|
 | Ti₂C   | `models/Ti2C/frozen_model.pb`  | Final MLIP for Ti₂C MXene  |
-| Ti-C  | `models/Ti3C2/frozen_model.pb` | Final MLIP for Ti-C MXene |
+| Ti-C  | `models/Ti-C/frozen_model.pb` | Final MLIP for Ti-C MXene |
 
 To evaluate the model on a test dataset:
 
 ```bash
-dp test -m models/Ti3C2/frozen_model.pb \
+dp test -m models/Ti-C/frozen_model.pb \
         -s data/DFT_dataset/DFT_dataset_Ti3C2/1_dpdata/<structure_dir>
 ```
 
@@ -76,7 +76,7 @@ dp test -m models/Ti3C2/frozen_model.pb \
 ## Usage
 
 1. Prepare DFT datasets (see `data/DFT_dataset/`).
-2. Train initial DeePMD models using `data/AL_iteration0/` and the configuration in `models/Ti3C2/input.json`.
+2. Train initial DeePMD models using `data/AL_iteration0/` and the configuration in `models/Ti-C/input.json`.
 3. Run entropy-guided active learning using `code/active_learning.sh`.
 4. Select structures based on differential entropy using `code/entropy_analysis.sh`.
 5. Repeat steps 2–4 for each AL iteration (1–4).
